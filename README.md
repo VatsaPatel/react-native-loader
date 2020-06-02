@@ -1,3 +1,5 @@
+# RN 0.62+ Support
+
 # react-native-loader
 A collection of animated spinners for react native using ReactART.
 
