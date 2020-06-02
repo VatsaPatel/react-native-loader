@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, ART } from 'react-native';
-const { Surface } = ART;
-
+import { Animated } from 'react-native';
+import { Surface, Shape } from '@react-native-community/art';
 import Bar from './animated/Bar';
 
 export default class Bubbles extends Component {
@@ -47,11 +46,13 @@ export default class Bubbles extends Component {
       .sequence([
         Animated.timing(this.state.bars[index], {
           toValue: this.props.size * 2.5,
-          duration: 600
+          duration: 600,
+          useNativeDriver: true
         }),
         Animated.timing(this.state.bars[index], {
           toValue: this.props.size,
-          duration: 600
+          duration: 600,
+          useNativeDriver: true
         })
       ])
       .start(() => {
